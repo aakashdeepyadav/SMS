@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+header {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+  top: 0;
+  z-index: 100;
+  position: sticky;
+
+}
+
+nav ul {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding: 0;
+  height: 50px;
+  font-size: 18px;
+
+
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 30px;
+  
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 550;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #00ffff;
+  color:#1b1464;
+}
+
+.lgn{
+  text-align: right;
+  background-color: #00ffff;
+  margin-left: 30em;
+  padding:10px;
+  height:4px;
+  width: 8px;
+  border-radius: 10%;
+}
+
+.login{
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  margin-top: 10%;
+  padding: 20px;
+  border: 5px solid #00ffff;
+  border-radius: 10px;
+  width: 400px;
+  height: 300px;
+}
+
+
+
+a:hover, a.active{
+    background: none;
+    color: #356464;
+  }
+
+
+  
+.table{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 100%;
+  
+}
+
+
+.bar-graph {
+  display: flex;
+  width: 700px;
+  height: 400px; 
+  
+  
+}
+
+.bar {
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
+  margin: 0 10px; 
+}
+
+.bar div {
+  width: 100%;
+}
+
+
+.syllabus{
+  background-color:rgba(218, 218, 218, 0.703);
+  margin-left: 10%;
+  margin-right: 10%;
+  border:5px #00ffff solid;
+  border-radius: 120px 0px 120px 0px;
+  padding: 15px;
+}
+
+
+.slb{
+  text-align: center;
+    
+    background-color: #ffffff;
+    margin: auto;
+    padding:18px;
+    height: 15px;
+    width: 200px;
+    border: 3px gold solid;
+    border-radius: 10%;
+}
+
+.slb1{
+    text-align: center;
+    margin-top: 20px;
+    background-color: gold;
+    margin: auto;
+    padding:18px;
+    height: 15px;
+    width: 200px;
+    border: 3px gold solid;
+    border-radius: 10%;
+}
+
+.slb a{
+  text-decoration: none;
+  color: #1b1464;
+
+}
+
+.slb a:hover{
+  color: gold;
+
+}
+
+
+.slb a:visited{
+  color: #1b1464;
+}
+
+h1{
+  color:#00ffff;
+  
+}

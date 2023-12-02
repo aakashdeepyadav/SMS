@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='icon' href="LPU_logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry</title>
+    <link rel="stylesheet" href="sms.css"> 
+    <link rel="stylesheet" href="inquiry.css"> 
+    <body link="#000000" vlink="#04cc64" bgcolor="#1b1464">
+      <header>
+      <nav>
+        <ul>
+          <li><a href="sms.html">Home</a></li>
+          <li><a href="timetable.html">TimeTable</a></li>
+          <li><a href="attendance.html">Attendance</a></li>
+          <li><a href="syllabus.html">Syllabus</a></li>
+          <li><a href="assignment.html">Assignment</a></li>
+          <li><a href="inquiry.html">Inquiry</a></li>
+          
+          <li class="lgn"><a href="login.html">login</a></li>
+    
+          </ul>
+    
+      </nav>
+    </header>
+
+
+
+
+
+<div class="form" id="inqform">
+   
+  <form action="" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="rgid">Registration No.:</label>
+    <input type="text" id="rgid" name="rgid" maxlength="8" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="course">Course:</label>
+    <select id="course" name="course">
+        <option value="CSE">CSE</option >
+        <option value="ECE">ECE</option>
+        <option value="ML">Civil</option>
+        <option value="ML">Chemical</option>
+        <option value="ML">IT</option>
+        <option value="ML">Mechanical</option>
+        <option value="ML">Aerospace</option>
+        
+    </select>
+    <br>
+    <label for="message">Message:</label>
+    
+    <textarea id="message" name="message" rows="4" cols="79" placeholder="Write your query here..." required></textarea>
+    <br>
+    <center><button type="submit">Submit Inquiry</button></center>
+</form>
+
+
+
+
+<script>
+  var form = document.getElementById("inqform");
+  form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Your query has been forwarded to the concern authority !");
+      window.location.href="sms.html";
+  });
+</script>
+
+</div> 
+
+</body>
+</html>
+

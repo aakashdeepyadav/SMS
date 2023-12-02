@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='icon' href="LPU_logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="sms.css"> 
+    <link rel="stylesheet" href="login.css"> 
+</head>
+<body link="#000000" vlink="#04cc64" bgcolor="#1b1464">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="sms.html">Home</a></li>
+                <li><a href="timetable.html">TimeTable</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="assignment.html">Assignment</a></li>
+                <li><a href="inquiry.html">Inquiry</a></li>
+                
+                <li class="lgn" id="navText"><a href="login.html">login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="login">
+        <form onsubmit="login(); return false;">
+            <label for="regno">Registration No.:</label>
+            <input type="text" id="regno" name="regno" placeholder="Registration No." maxlength="8" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your first name as password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+<script>
+const gmembers = [
+    { id: "12305420", name: "Aakash Deep Yadav" },
+    { id: "12305083", name: "Sweety Pradhan" },
+    { id: "12305890", name: "Aamir Ali" }
+];
+
+const users = [
+    { id: "12305420", name: "aakash" },
+    { id: "12305083", name: "sweety" },
+    { id: "12305890", name: "aamir" }
+];
+
+
+
+
+
+function login() {
+    const registrationNumber = document.getElementById("regno").value;
+    const password = document.getElementById("password").value;
+
+    const user = users.find(u => u.id === registrationNumber.toString() && u.name === password);
+
+    if (user) {
+        showLoggedInUsers(user);
+    } else {
+        window.alert("Invalid credentials. Please try again");
+    }
+}
+
+
+
+
+function showLoggedInUsers(user) {
+    const matchingGMember = gmembers.find(member => member.id === user.id);
+
+    // Store the gmember name in sessionStorage
+    sessionStorage.setItem('loggedInMemberName', matchingGMember.name);
+
+    // Update the text content of the login link in the header
+    const loginLink = document.getElementById("navText");
+    if (loginLink) {
+        loginLink.innerHTML = '<a href="">' + matchingGMember.name + '</a>';
+    }
+
+    window.alert("Welcome, " + matchingGMember.name + "!");
+    window.location.href = "sms.html";
+}
+
+
+</script>
+</body>
+</html>

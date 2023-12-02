@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='icon' href="LPU_logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+    <link rel="stylesheet" href="sms/sms.css"> 
+    <link rel="stylesheet" href="asgn.css"> 
+
+    <body link="#000000" vlink="#00ffff" bgcolor="#1b1464">
+  
+<div class="form" id="Assignmentform">
+   <h1 align="center">CSE-111 Assignments</h1>
+  <form action="" method="post">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required>
+    
+    <label for="assign">Assignment</label>
+    <select id="assign" name="assign">
+        <option value="as1">Assignment-1</option >
+        <option value="as2">Assignment-2</option>
+        <option value="as3">Assignment-3</option>
+        <option value="as4">Assignment-4</option>
+      </select>
+    
+    <label for="astype">Type of Assignment</label>
+    <select id="astype" name="astype">
+        <option value="ind">Individual</option >
+        <option value="gp">Group</option>
+
+    </select>
+    <label for="upload">Upload</label>
+    <input type="file" id="upload" name="upload" required>
+    
+    <center><button type="submit">Submit Assignment</button></center>
+</form>
+
+<script>
+  var form = document.getElementById("Assignmentform");
+  form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Your assignment is successfully uploaded !");
+      window.location.href="sms.html";
+  });
+</script>
+
+</div> 
+<center><button><a href="sms.html">Home</a></button></center>
+</body>
+</html>
+
