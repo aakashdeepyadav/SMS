@@ -1,21 +1,67 @@
 ﻿# SMS
 
-Static Student Management System website.
+Student Management System static website.
 
-## Deploy to Cloudflare Pages
+## Overview
 
-Use Cloudflare Pages static deployment (not Workers deploy).
+This project is a static multi-page website built with HTML and CSS.
 
-Build settings:
-- Build command: (leave empty)
+Main entry page:
+- `index.html`
+
+Includes:
+- Course pages
+- Attendance and timetable pages
+- Assignment and inquiry forms (front-end only)
+- Image assets
+- Syllabus PDFs in the `Syllabus` folder
+
+## Project Structure
+
+Key files and folders:
+- `index.html` - main homepage
+- `sms.css` - shared homepage/navigation styles
+- `assignment.css`, `asgn.css`, `inquiry.css`, `login.css` - page-specific styles
+- `Syllabus/` - PDF files linked from the syllabus page
+- `wrangler.toml` - Cloudflare deployment configuration
+
+## Run Locally
+
+Because this is a static site, you can open `index.html` directly in a browser.
+
+For better local testing, use a simple static server (optional).
+
+## Deploy to Cloudflare Pages (Recommended)
+
+Use Cloudflare Pages static deployment.
+
+Cloudflare Pages build settings:
+- Build command: leave empty
 - Build output directory: `.`
+- Deploy command: `npx wrangler pages deploy .`
 
-Wrangler CLI command (manual deploy):
-- `npx wrangler pages deploy .`
+Manual deploy command:
 
-This project includes `wrangler.toml` with:
+```bash
+npx wrangler pages deploy .
+```
+
+## If CI Runs `wrangler deploy`
+
+This repository also contains Worker assets config in `wrangler.toml`:
+
 - `pages_build_output_dir = "."`
+- `[assets] directory = "."`
 
-Notes:
-- `index.html` is the main homepage file.
+So static assets can still be uploaded if a pipeline uses `npx wrangler deploy`.
+
+## Post-Deploy Verification
+
+After deployment, verify these URLs on your live domain:
+
+1. `/`
+2. `/slide1.jpg`
+3. `/Syllabus/CSE111slbs.pdf`
+
+If all three open correctly, pages, photos, and PDFs are published properly.
 
