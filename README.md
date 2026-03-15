@@ -59,14 +59,13 @@ Important:
 - `npx wrangler deploy` is Worker deploy mode and can fail for static sites if Pages is intended.
 - For this project, prefer `npx wrangler pages deploy .`.
 
-## If CI Runs `wrangler deploy`
+## CI/CD Note
 
-This repository also contains Worker assets config in `wrangler.toml`:
+Use Pages deploy mode in CI/CD:
 
-- `pages_build_output_dir = "."`
-- `[assets] directory = "."`
+- `npx wrangler pages deploy .`
 
-So static assets can still be uploaded if a pipeline uses `npx wrangler deploy`.
+Do not use `npx wrangler deploy` for this project.
 
 ## Post-Deploy Verification
 
