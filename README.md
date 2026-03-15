@@ -2,6 +2,10 @@
 
 Student Management System static website.
 
+## Deployment Status
+
+This project is deployed as a static site on Cloudflare Pages.
+
 ## Overview
 
 This project is a static multi-page website built with HTML and CSS.
@@ -26,7 +30,6 @@ Key files and folders:
 - `sms.css` - shared homepage/navigation styles
 - `assignment.css`, `asgn.css`, `inquiry.css`, `login.css` - page-specific styles
 - `Syllabus/` - PDF files linked from the syllabus page
-- `wrangler.toml` - Cloudflare deployment configuration
 
 ## Run Locally
 
@@ -34,38 +37,21 @@ Because this is a static site, you can open `index.html` directly in a browser.
 
 For better local testing, use a simple static server (optional).
 
-## Deploy to Cloudflare Pages (Recommended)
+## Cloudflare Pages Configuration
 
-Use Cloudflare Pages static deployment.
+This project uses Cloudflare Pages Git-based static deployment.
 
-Cloudflare Pages build settings:
+Use these settings in Cloudflare Pages:
 
-- Build command: leave empty
+- Build command: empty
 - Build output directory: `.`
-- Deploy command: `npx wrangler pages deploy .`
-- Version command: leave empty
 - Root directory: `/`
 - Production branch: `main`
-- Build watch paths include: `*`
 
-Manual deploy command:
+For this static setup:
 
-```bash
-npx wrangler pages deploy .
-```
-
-Important:
-
-- `npx wrangler deploy` is Worker deploy mode and can fail for static sites if Pages is intended.
-- For this project, prefer `npx wrangler pages deploy .`.
-
-## CI/CD Note
-
-Use Pages deploy mode in CI/CD:
-
-- `npx wrangler pages deploy .`
-
-Do not use `npx wrangler deploy` for this project.
+- Do not use `wrangler deploy`
+- Do not require `CLOUDFLARE_API_TOKEN` in build variables
 
 ## Post-Deploy Verification
 
